@@ -1,0 +1,19 @@
+{
+  "name": "mern-commerce",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Full-stack e-commerce store: MongoDB, Express, React, Node. JWT auth, cart, Stripe checkout, admin dashboard.",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "NODE_ENV=production npm start -w server",
+    "seed": "npm run seed -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
